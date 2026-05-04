@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══════════════════════════════════════ PRIMARY SEO ═══ -->
+  <title>Shayan EV | EV Battery Expert — Free Assessment, Guide & Course</title>
+  <meta name="description" content="Shayan is a professional EV battery specialist offering a free electric vehicle battery health assessment, a free downloadable guide, and a comprehensive EV Battery Mastery course covering BMS, SOH, cell chemistry, and diagnostics." />
+  <meta name="keywords" content="EV battery expert, electric vehicle battery course, EV battery health assessment, battery management system BMS, EV battery specialist, EV battery guide, battery SOH, EV diagnostics, Shayan EV, EV battery mastery, EV battery training, electric vehicle battery health" />
+  <meta name="author" content="Shayan" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://shayanev.com/" />
+
+  <!-- ═══════════════════════════════════════ OPEN GRAPH ════ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://shayanev.com/" />
+  <meta property="og:title" content="Shayan EV | EV Battery Expert — Free Assessment & Course" />
+  <meta property="og:description" content="Free EV battery health assessment + expert training on BMS, SOH, and electric vehicle battery systems. Trusted by 500+ students." />
+  <meta property="og:image" content="https://shayanev.com/shayan_ev_image.webp" />
+  <meta property="og:image:alt" content="Shayan — EV Battery Expert and Educator" />
+  <meta property="og:site_name" content="ShayanEV" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- ═══════════════════════════════════════ TWITTER CARD ══ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Shayan EV | EV Battery Expert" />
+  <meta name="twitter:description" content="Free EV battery health check + the most comprehensive EV battery course online. Covers BMS, SOH, diagnostics & more." />
+  <meta name="twitter:image" content="https://shayanev.com/shayan_ev_image.webp" />
+
+  <!-- ═══════════════════════════════════════ SCHEMA.ORG ════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://shayanev.com/#shayan",
+        "name": "Shayan",
+        "url": "https://shayanev.com",
+        "image": "https://shayanev.com/shayan_ev_image.webp",
+        "jobTitle": "Electric Vehicle Battery Expert & Educator",
+        "description": "EV battery specialist with 10+ years experience in battery management systems, cell chemistry, diagnostics, and electric vehicle technology education.",
+        "knowsAbout": ["Electric Vehicle Batteries", "Battery Management Systems", "BMS Engineering", "State of Health (SOH)", "Li-ion Cell Chemistry", "EV Diagnostics"]
+      },
+      {
+        "@type": "Course",
+        "@id": "https://shayanev.com/#course",
+        "name": "EV Battery Mastery Course",
+        "description": "The complete professional course on EV battery systems, BMS, SOH, diagnostics, and real-world electric vehicle battery troubleshooting.",
+        "url": "https://shayanev.gumroad.com/l/rbwrqa",
+        "provider": { "@id": "https://shayanev.com/#shayan" },
+        "educationalLevel": "Professional",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://shayanev.com/#website",
+        "url": "https://shayanev.com",
+        "name": "ShayanEV",
+        "description": "EV battery expert — free assessment, free guide, and professional course.",
+        "publisher": { "@id": "https://shayanev.com/#shayan" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══════════════════════════════════════ FONTS & CDN ═══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- ═══════════════════════════════════════ TAILWIND CFG ══ -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            brand: { 400: '#4ade80', 500: '#22c55e', 600: '#16a34a' }
+          },
+          animation: {
+            'float': 'float 5s ease-in-out infinite',
+            'pulse-glow': 'pulseGlow 2.5s ease-in-out infinite',
+            'fade-up': 'fadeUp 0.7s ease-out forwards',
+          },
+          keyframes: {
+            float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' } },
+            pulseGlow: { '0%,100%': { boxShadow: '0 0 16px rgba(34,197,94,.35)' }, '50%': { boxShadow: '0 0 40px rgba(34,197,94,.65)' } },
+            fadeUp: { from: { opacity: 0, transform: 'translateY(28px)' }, to: { opacity: 1, transform: 'translateY(0)' } },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    html { scroll-behavior: smooth; }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #22c55e; border-radius: 4px; }
+
+    .grad-text {
+      background: linear-gradient(135deg, #22c55e 0%, #4ade80 50%, #10b981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-bg {
+      background:
+        radial-gradient(ellipse 80% 60% at 15% 55%, rgba(34,197,94,.09) 0%, transparent 65%),
+        radial-gradient(ellipse 60% 50% at 85% 15%, rgba(16,185,129,.07) 0%, transparent 60%),
+        #0f172a;
+    }
+
+    .grid-dots {
+      background-image: radial-gradient(rgba(34,197,94,.12) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    .card-lift { transition: transform .3s ease, box-shadow .3s ease; }
+    .card-lift:hover { transform: translateY(-5px); box-shadow: 0 20px 48px rgba(34,197,94,.12); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+      background: #22c55e; color: #000; font-weight: 700;
+      padding: .9rem 2rem; border-radius: .75rem;
+      transition: background .2s, box-shadow .2s;
+      box-shadow: 0 0 20px rgba(34,197,94,.3);
+    }
+    .btn-primary:hover { background: #16a34a; box-shadow: 0 0 40px rgba(34,197,94,.55); }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+      border: 1.5px solid #334155; color: #fff; font-weight: 600;
+      padding: .9rem 2rem; border-radius: .75rem;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-ghost:hover { border-color: #22c55e; color: #4ade80; }
+
+    .section-tag {
+      display: inline-block;
+      background: rgba(34,197,94,.1); border: 1px solid rgba(34,197,94,.25);
+      color: #4ade80; font-size: .75rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: .3rem .85rem; border-radius: 99px;
+      margin-bottom: 1rem;
+    }
+
+    .check-item { display: flex; gap: .75rem; align-items: flex-start; }
+    .check-icon { color: #22c55e; flex-shrink: 0; margin-top: 2px; }
+
+    @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .ticker-wrap { overflow: hidden; }
+    .ticker-inner { display: flex; width: max-content; animation: ticker 28s linear infinite; }
+    .ticker-inner:hover { animation-play-state: paused; }
+
+    .d1 { animation-delay: .1s; opacity: 0; }
+    .d2 { animation-delay: .22s; opacity: 0; }
+    .d3 { animation-delay: .34s; opacity: 0; }
+    .d4 { animation-delay: .46s; opacity: 0; }
+    .d5 { animation-delay: .58s; opacity: 0; }
+  </style>
+</head>
+
+<body class="bg-slate-900 text-white antialiased">
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect, useRef } = React;
+
+/* ─── tiny icon helpers ───────────────────────────────────────────────── */
+const Icon = ({ d, size = 20, strokeWidth = 2 }) => (
+  <svg width={size} height={size} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+    <path d={d} />
+  </svg>
+);
+
+const ICONS = {
+  chevronDown: 'M19 9l-7 7-7-7',
+  arrowRight:  'M13 7l5 5m0 0l-5 5m5-5H6',
+  check:       'M5 13l4 4L19 7',
+  download:    'M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4',
+  book:        'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253',
+  menu:        'M4 6h16M4 12h16M4 18h16',
+  x:           'M6 18L18 6M6 6l12 12',
+  star:        'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z',
+};
+
+const Chevron = () => <Icon d={ICONS.chevronDown} />;
+const ArrowRight = () => <Icon d={ICONS.arrowRight} />;
+const Check = () => <Icon d={ICONS.check} strokeWidth={2.5} />;
+const Download = () => <Icon d={ICONS.download} />;
+const BookOpen = () => <Icon d={ICONS.book} />;
+const Star = ({ fill }) => (
+  <svg width={16} height={16} viewBox="0 0 24 24"
+    fill={fill ? '#22c55e' : 'none'} stroke="#22c55e" strokeWidth={1.5}
+    strokeLinecap="round" strokeLinejoin="round">
+    <path d={ICONS.star} />
+  </svg>
+);
+
+/* ─── smooth scroll helper ────────────────────────────────────────────── */
+const goto = (id) => document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
+
+/* ═══════════════════════════════════ NAVBAR ═══════════════════════════ */
+function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const fn = () => setScrolled(window.scrollY > 24);
+    window.addEventListener('scroll', fn);
+    return () => window.removeEventListener('scroll', fn);
+  }, []);
+
+  const links = [
+    { href: '#about',        label: 'About' },
+    { href: '#assessment',   label: 'Free Assessment' },
+    { href: '#guide',        label: 'Free Guide' },
+    { href: '#course',       label: 'Course' },
+    { href: '#testimonials', label: 'Reviews' },
+  ];
+
+  return (
+    <nav
+      role="navigation" aria-label="Main navigation"
+      className={`fixed top-0 w-full z-50 transition-all duration-300
+        ${scrolled ? 'bg-slate-900/95 backdrop-blur-lg border-b border-slate-800' : 'bg-transparent'}`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        {/* Logo */}
+        <a href="#" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+           className="text-xl font-black tracking-tight">
+          <span className="grad-text">Shayan</span><span className="text-slate-500">EV</span>
+        </a>
+
+        {/* Desktop links */}
+        <div className="hidden md:flex items-center gap-7">
+          {links.map(l => (
+            <a key={l.href} href={l.href}
+               onClick={e => { e.preventDefault(); goto(l.href); }}
+               className="text-sm text-slate-400 hover:text-brand-400 transition-colors cursor-pointer font-medium">
+              {l.label}
+            </a>
+          ))}
+          <a href="https://shayanev.gumroad.com/l/rbwrqa"
+             target="_blank" rel="noopener noreferrer"
+             className="btn-primary text-sm !py-2 !px-5">
+            Get the Course
+          </a>
+        </div>
+
+        {/* Mobile toggle */}
+        <button onClick={() => setOpen(!open)} aria-label="Toggle menu"
+                className="md:hidden text-slate-400 hover:text-white transition-colors">
+          {open ? <Icon d={ICONS.x} /> : <Icon d={ICONS.menu} />}
+        </button>
+      </div>
+
+      {/* Mobile drawer */}
+      {open && (
+        <div className="md:hidden bg-slate-900/98 backdrop-blur-xl border-b border-slate-800 px-4 py-4 space-y-1">
+          {links.map(l => (
+            <a key={l.href} href={l.href}
+               onClick={e => { e.preventDefault(); goto(l.href); setOpen(false); }}
+               className="block py-3 text-slate-400 hover:text-brand-400 transition-colors cursor-pointer border-b border-slate-800/60 text-sm font-medium">
+              {l.label}
+            </a>
+          ))}
+          <a href="https://shayanev.gumroad.com/l/rbwrqa"
+             target="_blank" rel="noopener noreferrer"
+             onClick={() => setOpen(false)}
+             className="btn-primary mt-4 w-full text-sm !py-3">
+            Get the Course
+          </a>
+        </div>
+      )}
+    </nav>
+  );
+}
+
+/* ═══════════════════════════════════ HERO ════════════════════════════ */
+function Hero() {
+  return (
+    <section className="hero-bg grid-dots min-h-screen flex items-center pt-16" aria-label="Hero">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
+        <div className="grid lg:grid-cols-2 gap-14 items-center">
+
+          {/* Text */}
+          <div>
+            <div className="animate-fade-up d1 section-tag flex items-center gap-2 w-fit">
+              <span className="inline-block w-2 h-2 rounded-full bg-brand-400 animate-pulse-glow"></span>
+              EV Battery Specialist
+            </div>
+
+            <h1 className="animate-fade-up d2 text-4xl sm:text-5xl xl:text-6xl font-black leading-[1.08] mb-6">
+              Master Your<br/>
+              <span className="grad-text">EV Battery</span><br/>
+              With Confidence
+            </h1>
+
+            <p className="animate-fade-up d3 text-slate-400 text-lg leading-relaxed mb-8 max-w-lg">
+              I'm Shayan — an EV battery expert helping engineers, mechanics, and enthusiasts
+              understand battery health, BMS systems, and electric vehicle technology.
+              Start with a free assessment or go deep with my mastery course.
+            </p>
+
+            <div className="animate-fade-up d4 flex flex-col sm:flex-row gap-4 mb-12">
+              <a href="https://ev-battery-health.vercel.app/"
+                 target="_blank" rel="noopener noreferrer"
+                 className="btn-primary text-lg">
+                ⚡ Free Battery Assessment
+              </a>
+              <a href="https://shayanev.gumroad.com/l/rbwrqa"
+                 target="_blank" rel="noopener noreferrer"
+                 className="btn-ghost text-lg">
+                View Course <ArrowRight />
+              </a>
+            </div>
+
+            {/* Stats bar */}
+            <div className="animate-fade-up d5 grid grid-cols-3 gap-6 pt-8 border-t border-slate-800">
+              {[
+                { v: '500+', l: 'Students Trained' },
+                { v: '10+',  l: 'Years Experience' },
+                { v: '98%',  l: 'Satisfaction Rate' },
+              ].map(s => (
+                <div key={s.l}>
+                  <div className="text-2xl sm:text-3xl font-black text-brand-400">{s.v}</div>
+                  <div className="text-slate-500 text-xs sm:text-sm mt-0.5">{s.l}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Photo */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative">
+              {/* glow blob */}
+              <div className="absolute -inset-8 bg-gradient-to-br from-brand-500/20 to-emerald-500/10 rounded-full blur-3xl"></div>
+
+              <div className="relative bg-slate-800 border border-slate-700 rounded-3xl p-2 animate-float shadow-2xl">
+                <img
+                  src="shayan_ev_image.webp"
+                  alt="Shayan — EV Battery Expert and Educator"
+                  width="380" height="460"
+                  className="w-72 sm:w-80 h-auto object-cover rounded-2xl"
+                  loading="eager"
+                  fetchpriority="high"
+                />
+
+                {/* Floating badge */}
+                <div className="absolute -bottom-5 -left-5 bg-slate-800 border border-brand-500/30 rounded-2xl px-4 py-3 shadow-xl">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-brand-400 animate-pulse"></span>
+                    <span className="text-brand-400 font-semibold text-sm whitespace-nowrap">Available for Consulting</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll cue */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-600 animate-bounce">
+        <Chevron />
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════ TICKER ══════════════════════════ */
+function Ticker() {
+  const items = ['⚡ EV Battery Health', '🔋 BMS Systems', '📊 State of Health (SOH)', '🔌 Cell Chemistry', '⚙️ EV Diagnostics', '🎓 Expert Training', '🛡️ Battery Safety', '💡 Charging Optimization'];
+  const repeated = [...items, ...items];
+  return (
+    <div className="ticker-wrap bg-brand-500/8 border-y border-brand-500/10 py-3">
+      <div className="ticker-inner gap-12">
+        {repeated.map((t, i) => (
+          <span key={i} className="text-brand-400 text-sm font-semibold whitespace-nowrap mx-8 opacity-75">{t}</span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ═══════════════════════════════════ ABOUT ═══════════════════════════ */
+function About() {
+  const skills = [
+    'EV Battery Health Analysis',
+    'Battery Management Systems (BMS)',
+    'Cell Chemistry & Electrochemistry',
+    'State of Health (SOH) Testing',
+    'EV Diagnostics & Fault Analysis',
+    'Charging System Optimization',
+  ];
+
+  const cards = [
+    { icon: '⚡', title: 'Battery Expert', desc: 'Deep expertise in Li-ion, LFP, and NMC battery chemistries powering modern EVs.' },
+    { icon: '🔋', title: 'BMS Specialist', desc: 'Understanding and optimising Battery Management Systems for performance and safety.' },
+    { icon: '📊', title: 'Data-Driven', desc: 'Using real diagnostic data to assess battery health and predict degradation curves.' },
+    { icon: '🎓', title: 'Educator', desc: 'Making complex EV technology accessible and practical for all experience levels.' },
+  ];
+
+  return (
+    <section id="about" aria-label="About Shayan" className="py-24 bg-slate-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+          <div>
+            <div className="section-tag">About Shayan</div>
+            <h2 className="text-3xl sm:text-4xl font-black mt-2 mb-5">
+              Your Go-To Expert for<br/>
+              <span className="grad-text">EV Battery Systems</span>
+            </h2>
+            <p className="text-slate-400 leading-relaxed mb-5">
+              With over a decade of hands-on experience in electric vehicle battery systems,
+              Battery Management Systems (BMS), and EV technology, I've helped hundreds of
+              professionals master the technical skills they need to thrive in the rapidly
+              growing EV industry.
+            </p>
+            <p className="text-slate-400 leading-relaxed mb-8">
+              Whether you're a mechanic transitioning to EVs, an engineer deepening your battery
+              knowledge, or an EV enthusiast wanting to understand your vehicle better —
+              I provide clear, practical, and actionable education you can use immediately.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {skills.map(s => (
+                <div key={s} className="check-item">
+                  <span className="check-icon"><Check /></span>
+                  <span className="text-slate-300 text-sm">{s}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            {cards.map(c => (
+              <div key={c.title}
+                   className="bg-slate-800/60 border border-slate-700 rounded-2xl p-6 card-lift">
+                <div className="text-3xl mb-3">{c.icon}</div>
+                <h3 className="font-bold text-white mb-2 text-sm">{c.title}</h3>
+                <p className="text-slate-400 text-xs leading-relaxed">{c.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════ FREE ASSESSMENT ═════════════════ */
+function Assessment() {
+  return (
+    <section id="assessment" aria-label="Free EV Battery Assessment" className="py-24 bg-slate-800/50">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 border border-brand-500/20 rounded-3xl p-10 sm:p-14 overflow-hidden text-center">
+          {/* decorative blobs */}
+          <div className="absolute -top-20 -right-20 w-64 h-64 bg-brand-500/6 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-emerald-500/6 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div className="relative">
+            <div className="section-tag mx-auto">⚡ Completely Free</div>
+            <h2 className="text-3xl sm:text-4xl font-black mb-4">
+              Check Your EV Battery Health
+              <br/><span className="grad-text">Right Now — For Free</span>
+            </h2>
+            <p className="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">
+              Get an instant assessment of your electric vehicle's battery health.
+              Understand State of Health (SOH), degradation rate, and what it means for your vehicle's future.
+            </p>
+
+            <div className="grid sm:grid-cols-3 gap-6 mb-10">
+              {[
+                { icon: '🔍', t: 'Instant Results',     d: 'Your battery health score in minutes' },
+                { icon: '📈', t: 'Detailed Analysis',   d: 'SOH, capacity & degradation insights' },
+                { icon: '💡', t: 'Expert Tips',         d: 'Personalised recommendations for your EV' },
+              ].map(i => (
+                <div key={i.t} className="bg-slate-700/25 border border-slate-700/50 rounded-2xl p-5">
+                  <div className="text-3xl mb-2">{i.icon}</div>
+                  <div className="font-semibold text-white mb-1 text-sm">{i.t}</div>
+                  <div className="text-slate-400 text-xs">{i.d}</div>
+                </div>
+              ))}
+            </div>
+
+            <a href="https://ev-battery-health.vercel.app/"
+               target="_blank" rel="noopener noreferrer"
+               className="btn-primary text-xl">
+              ⚡ Start Free Assessment
+            </a>
+            <p className="text-slate-500 text-sm mt-4">No signup required · Instant results · 100% free</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════ FREE GUIDE (LEAD MAGNET) ════════ */
+function Guide() {
+  const bullets = [
+    'How to read and interpret your EV battery data',
+    'The #1 mistake EV owners make that kills battery life',
+    'Optimal charging habits for maximum longevity',
+    'When to worry (and when not to) about battery degradation',
+    'BMS explained in plain English — no engineering degree needed',
+  ];
+
+  return (
+    <section id="guide" aria-label="Free EV Battery Guide" className="py-24 bg-slate-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-14 items-center">
+
+          {/* Book mockup */}
+          <div className="flex justify-center order-last lg:order-first">
+            <div className="relative">
+              <div className="absolute inset-0 bg-brand-500/10 blur-3xl rounded-3xl pointer-events-none"></div>
+              <div className="relative bg-gradient-to-br from-slate-700 to-slate-900 border border-slate-600 rounded-2xl p-7 w-64 shadow-2xl animate-float">
+                {/* "book cover" */}
+                <div className="bg-brand-500/10 border border-brand-500/25 rounded-xl p-5 mb-5 text-center">
+                  <div className="text-5xl mb-3">🔋</div>
+                  <div className="h-2.5 bg-brand-400/40 rounded w-3/4 mx-auto mb-2"></div>
+                  <div className="h-2 bg-slate-600 rounded w-full mb-1.5"></div>
+                  <div className="h-2 bg-slate-600 rounded w-5/6"></div>
+                </div>
+                <div className="space-y-2">
+                  {[100, 85, 92, 78].map((w, i) => (
+                    <div key={i} className="h-2 bg-slate-700 rounded" style={{ width: `${w}%` }}></div>
+                  ))}
+                </div>
+                <div className="mt-5 flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-full bg-brand-500/20 border border-brand-500/30 flex items-center justify-center">
+                    <span className="text-brand-400 font-bold text-sm">S</span>
+                  </div>
+                  <div>
+                    <div className="h-2 bg-slate-600 rounded w-16"></div>
+                    <div className="h-1.5 bg-slate-700 rounded w-12 mt-1"></div>
+                  </div>
+                </div>
+                {/* free badge */}
+                <div className="absolute -top-3 -right-3 bg-brand-500 text-black text-xs font-black px-3 py-1 rounded-full shadow-lg">
+                  FREE
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Copy */}
+          <div>
+            <div className="section-tag">Free Resource</div>
+            <h2 className="text-3xl sm:text-4xl font-black mt-2 mb-5">
+              Download Your Free<br/>
+              <span className="grad-text">EV Battery Guide</span>
+            </h2>
+            <p className="text-slate-400 leading-relaxed mb-6">
+              Get my comprehensive EV battery guide — packed with expert knowledge on battery health,
+              charging best practices, and how to maximise your EV's battery lifespan.
+              No fluff. Just actionable insights from a real EV battery specialist.
+            </p>
+
+            <ul className="space-y-3 mb-8">
+              {bullets.map(b => (
+                <li key={b} className="check-item">
+                  <span className="check-icon"><Check /></span>
+                  <span className="text-slate-300 text-sm">{b}</span>
+                </li>
+              ))}
+            </ul>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf0FeyT8ocyjoFi8ExpOJd2vmNQ7z2EcfYVFl9x_aijaE7eUw/viewform"
+               target="_blank" rel="noopener noreferrer"
+               className="btn-primary text-lg">
+              <Download /> Download Free Guide
+            </a>
+            <p className="text-slate-500 text-sm mt-3">Free · Instant access · No spam, ever</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════ COURSE ══════════════════════════ */
+function Course() {
+  const modules = [
+    'Complete EV battery fundamentals & chemistry',
+    'Battery Management Systems (BMS) deep dive',
+    'Hands-on diagnostic techniques',
+    'State of Health (SOH) & State of Charge (SOC)',
+    'Cell balancing strategies and optimisation',
+    'Real-world troubleshooting scenarios',
+    'Charging infrastructure & charging protocols (CCS, CHAdeMO, NACS)',
+    'Future of EV battery technology',
+  ];
+
+  const whys = [
+    { icon: '🎯', t: 'Real-World Application',    d: 'Not just theory — every lesson is designed for skills you can apply immediately on the job or on your own vehicle.' },
+    { icon: '⚡', t: 'Taught by an Industry Expert', d: '10+ years of hands-on EV battery experience distilled into a clear, structured learning path.' },
+    { icon: '📈', t: 'Stay Ahead of the Curve',   d: 'The EV industry is exploding. Get the technical knowledge that puts you ahead of 95% of mechanics and engineers.' },
+    { icon: '💼', t: 'Career-Changing Skills',    d: 'EV battery expertise is one of the most in-demand skills in the automotive industry right now.' },
+  ];
+
+  return (
+    <section id="course" aria-label="EV Battery Mastery Course" className="py-24 bg-slate-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <div className="section-tag mx-auto">Premium Training</div>
+          <h2 className="text-3xl sm:text-4xl font-black mt-2 mb-4">
+            The Complete <span className="grad-text">EV Battery Mastery</span> Course
+          </h2>
+          <p className="text-slate-400 max-w-2xl mx-auto">
+            Go from confused to confident. The most comprehensive EV battery course available —
+            built for real-world application and backed by 10+ years of field experience.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+
+          {/* Course card */}
+          <div className="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-3xl overflow-hidden card-lift">
+            <div className="bg-brand-500/10 border-b border-slate-700 p-8">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="bg-brand-500/15 border border-brand-500/25 rounded-xl p-3 text-brand-400">
+                  <BookOpen />
+                </div>
+                <div>
+                  <div className="font-bold text-white">EV Battery Mastery</div>
+                  <div className="text-slate-400 text-sm">Complete Professional Course</div>
+                </div>
+              </div>
+              <div className="flex items-baseline gap-2">
+                <span className="text-4xl font-black grad-text">Expert</span>
+                <span className="text-slate-400 text-sm">Level Training</span>
+              </div>
+            </div>
+
+            <div className="p-8">
+              <ul className="space-y-3 mb-8">
+                {modules.map(m => (
+                  <li key={m} className="check-item">
+                    <span className="check-icon"><Check /></span>
+                    <span className="text-slate-300 text-sm">{m}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a href="https://shayanev.gumroad.com/l/rbwrqa"
+                 target="_blank" rel="noopener noreferrer"
+                 className="btn-primary w-full text-lg !justify-center">
+                Get Instant Access <ArrowRight />
+              </a>
+              <p className="text-center text-slate-500 text-xs mt-3">Lifetime access · Immediate download</p>
+            </div>
+          </div>
+
+          {/* Why this course */}
+          <div>
+            <h3 className="text-2xl font-black mb-8">Why This Course?</h3>
+            <div className="space-y-4">
+              {whys.map(w => (
+                <div key={w.t} className="flex gap-4 p-5 bg-slate-800/40 border border-slate-700/50 rounded-2xl card-lift">
+                  <div className="text-3xl flex-shrink-0">{w.icon}</div>
+                  <div>
+                    <h4 className="font-bold text-white mb-1 text-sm">{w.t}</h4>
+                    <p className="text-slate-400 text-sm leading-relaxed">{w.d}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════ TESTIMONIALS ════════════════════ */
+function Testimonials() {
+  const reviews = [
+    { name: 'James R.', role: 'Automotive Technician', stars: 5,
+      text: "Shayan's course completely changed how I approach EV diagnostics. The BMS section alone was worth 10× the price. Highly recommend to any mechanic looking to level up." },
+    { name: 'Sarah K.', role: 'EV Enthusiast',         stars: 5,
+      text: "I finally understand what's happening inside my battery. The free assessment was eye-opening, and the course gave me the confidence to make smarter charging decisions." },
+    { name: 'David M.', role: 'Electrical Engineer',   stars: 5,
+      text: "Exactly the right depth — technical enough to be genuinely useful, practical enough to apply immediately. One of the best professional resources I've purchased." },
+  ];
+
+  return (
+    <section id="testimonials" aria-label="Student Reviews" className="py-24 bg-slate-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <div className="section-tag mx-auto">Student Reviews</div>
+          <h2 className="text-3xl sm:text-4xl font-black mt-2">
+            What My Students <span className="grad-text">Are Saying</span>
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {reviews.map(r => (
+            <article key={r.name} className="bg-slate-900/60 border border-slate-700 rounded-2xl p-6 card-lift flex flex-col">
+              <div className="flex gap-0.5 mb-4">
+                {[1,2,3,4,5].map(i => <Star key={i} fill={i <= r.stars} />)}
+              </div>
+              <p className="text-slate-300 text-sm leading-relaxed mb-6 flex-1">"{r.text}"</p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-brand-500/15 border border-brand-500/25 flex items-center justify-center">
+                  <span className="text-brand-400 font-bold">{r.name[0]}</span>
+                </div>
+                <div>
+                  <div className="font-semibold text-white text-sm">{r.name}</div>
+                  <div className="text-slate-500 text-xs">{r.role}</div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════ CTA BANNER ══════════════════════ */
+function CTABanner() {
+  return (
+    <section aria-label="Call to action" className="py-20 bg-gradient-to-r from-brand-600 to-emerald-600">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 className="text-3xl sm:text-4xl font-black text-black mb-4">
+          Ready to Master EV Battery Technology?
+        </h2>
+        <p className="text-black/70 text-lg mb-10">
+          Start with a free assessment today. No commitment. No credit card required.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://ev-battery-health.vercel.app/"
+             target="_blank" rel="noopener noreferrer"
+             className="inline-flex items-center justify-center gap-2 bg-black hover:bg-slate-900 text-white font-bold px-8 py-4 rounded-xl transition-colors text-lg">
+            ⚡ Free Assessment
+          </a>
+          <a href="https://shayanev.gumroad.com/l/rbwrqa"
+             target="_blank" rel="noopener noreferrer"
+             className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-black font-bold px-8 py-4 rounded-xl transition-colors text-lg">
+            Get the Course <ArrowRight />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════ FOOTER ══════════════════════════ */
+function Footer() {
+  const tags = ['EV Battery', 'BMS', 'Battery Health', 'SOH', 'SOC', 'Cell Chemistry', 'EV Diagnostics', 'Li-ion', 'LFP', 'NMC', 'EV Training'];
+
+  return (
+    <footer id="contact" aria-label="Footer" className="bg-slate-900 border-t border-slate-800 pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
+
+          {/* Brand */}
+          <div>
+            <div className="text-2xl font-black mb-4">
+              <span className="grad-text">Shayan</span><span className="text-slate-500">EV</span>
+            </div>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              EV battery expert, educator, and content creator helping the world understand
+              electric vehicle technology — one battery at a time.
+            </p>
+          </div>
+
+          {/* Links */}
+          <div>
+            <h3 className="font-semibold text-white mb-4 text-sm">Quick Links</h3>
+            <ul className="space-y-2">
+              {[
+                { l: 'Free Battery Assessment', h: 'https://ev-battery-health.vercel.app/' },
+                { l: 'Free EV Battery Guide',   h: 'https://docs.google.com/forms/d/e/1FAIpQLSf0FeyT8ocyjoFi8ExpOJd2vmNQ7z2EcfYVFl9x_aijaE7eUw/viewform' },
+                { l: 'EV Battery Mastery Course', h: 'https://shayanev.gumroad.com/l/rbwrqa' },
+              ].map(({ l, h }) => (
+                <li key={l}>
+                  <a href={h} target="_blank" rel="noopener noreferrer"
+                     className="text-slate-400 hover:text-brand-400 transition-colors text-sm">
+                    {l}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Topic tags */}
+          <div>
+            <h3 className="font-semibold text-white mb-4 text-sm">Expertise</h3>
+            <div className="flex flex-wrap gap-2">
+              {tags.map(t => (
+                <span key={t} className="bg-slate-800 border border-slate-700 text-slate-400 text-xs px-3 py-1 rounded-full">
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-slate-500 text-sm">© 2025 ShayanEV.com — All rights reserved.</p>
+          <p className="text-slate-600 text-xs">EV Battery Expert · BMS Specialist · Electric Vehicle Education</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+/* ═══════════════════════════════════ APP ROOT ════════════════════════ */
+function App() {
+  return (
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <Ticker />
+        <About />
+        <Assessment />
+        <Guide />
+        <Course />
+        <Testimonials />
+        <CTABanner />
+      </main>
+      <Footer />
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
