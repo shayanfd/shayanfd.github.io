@@ -10,7 +10,7 @@
  *        webhookUrl: 'https://your-esp.com/api/subscribe'
  *      };
  *    </script>
- *    <script src="/js/exit-popup.js"></script>
+ *    <script src="/exit-popup.js"></script>
  *
  *  To EXCLUDE the popup on a specific page (e.g. landing page, checkout):
  *
