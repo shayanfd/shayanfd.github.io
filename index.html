@@ -22,8 +22,7 @@
   <meta name="twitter:image" content="https://shayanev.com/shayan_ev_image.webp" />
 
   <!-- Exclude exit popup on this page (it has a form already) -->
-  <script>window.__SHAYANEV_NO_POPUP__ = true;</script>
-
+  
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A1628'/><path d='M20 3L9 18h8.5L15 29l13-15h-8.5z' fill='%2300C896'/></svg>" />
 
@@ -974,5 +973,12 @@
   })();
   </script>
 
+<!-- ════════════════════ EXIT-INTENT POPUP ════════════════════ -->
+<script>
+  window.__SHAYANEV__ = {
+    webhookUrl: 'https://script.google.com/macros/s/AKfycbwshxmAGgMQDwdoL7quMpzyYLxWhohSOVQxwpt9BMRxe6sMdEfxfD_pmZBgUaSXYgpLnA/exec'
+  };
+</script>
+<script src="../js/exit-popup.js"></script>
 </body>
 </html>

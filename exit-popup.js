@@ -10,7 +10,7 @@
  *        webhookUrl: 'https://your-esp.com/api/subscribe'
  *      };
  *    </script>
- *    <script src="/exit-popup.js"></script>
+ *    <script src="/js/exit-popup.js"></script>
  *
  *  To EXCLUDE the popup on a specific page (e.g. landing page, checkout):
  *
@@ -77,15 +77,21 @@
       '      <li>Downloaded by 3,200+ EV owners</li>',
       '    </ul>',
       '    <div id="exitPopupForm">',
+      '      <input type="text" id="exitPopupName" placeholder="Your first name"',
+      '             aria-label="First name" autocomplete="given-name" style="width:100%;padding:14px 16px;border:1.5px solid #CBD5E1;border-radius:8px;font-size:16px;margin:0 0 10px;font-family:inherit;outline:none;box-sizing:border-box;">',
       '      <input type="email" id="exitPopupEmail" placeholder="your.email@example.com"',
       '             aria-label="Email address" autocomplete="email" required>',
       '      <button class="cta-btn" id="exitPopupSubmit" type="button">',
       '        <span id="exitPopupBtnLabel">Get the Free Guide →</span>',
       '      </button>',
       '    </div>',
-      '    <div id="exitPopupSuccess" style="display:none;">',
-      '      <p style="font-family:\'DM Sans\',sans-serif;font-size:22px;font-weight:700;color:#00C896;margin:16px 0 8px;">✓ Check your inbox!</p>',
-      '      <p style="font-family:\'Source Sans 3\',sans-serif;font-size:14px;color:#475569;margin:0;">Your free guide is on its way.</p>',
+      '    <div id="exitPopupSuccess" style="display:none;text-align:center;">',
+      '      <p style="font-family:\'DM Sans\',sans-serif;font-size:22px;font-weight:700;color:#00C896;margin:16px 0 8px;">✓ You\'re all set!</p>',
+      '      <p style="font-family:\'Source Sans 3\',sans-serif;font-size:15px;color:#475569;margin:0 0 20px;">Your free guide is ready below:</p>',
+      '      <a href="https://drive.google.com/file/d/1VjvEJRxi-i6JyvoReYtV56wCfkUGWdM6/view" target="_blank" rel="noopener"',
+      '         style="display:inline-block;padding:14px 28px;background:#00C896;color:#fff;border-radius:8px;font-family:\'DM Sans\',sans-serif;font-size:16px;font-weight:600;text-decoration:none;box-shadow:0 4px 14px rgba(0,200,150,0.3);">',
+      '        📄 Download Your Free Guide',
+      '      </a>',
       '    </div>',
       '    <button class="dismiss" id="exitPopupDismiss" type="button">',
       '      No thanks, I\'ll risk it',
@@ -214,9 +220,11 @@
   }
 
   async function handleSubmit() {
+    var nameInput  = document.getElementById('exitPopupName');
     var emailInput = document.getElementById('exitPopupEmail');
     var submitBtn  = document.getElementById('exitPopupSubmit');
     var btnLabel   = document.getElementById('exitPopupBtnLabel');
+    var name       = (nameInput  && nameInput.value  || '').trim();
     var email      = (emailInput && emailInput.value || '').trim();
 
     // Validate
@@ -238,7 +246,7 @@
         if (isGAS) {
           // GET with params (no CORS preflight)
           var u = new URL(CONFIG.webhookUrl);
-          u.searchParams.set('name',      '');
+          u.searchParams.set('name',      name);
           u.searchParams.set('email',     email);
           u.searchParams.set('source',    'exit-intent-popup');
           u.searchParams.set('page',      window.location.pathname);
