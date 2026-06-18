@@ -121,6 +121,146 @@
     }
     .logo-bolt { color: var(--accent-cta); }
 
+    /* ════════════════════ TOOLS MENU ════════════════════ */
+    .tools-nav { margin-left: auto; position: relative; }
+    .tools-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-hero-sub);
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: color 0.2s, background 0.2s, border-color 0.2s;
+    }
+    .tools-nav:hover .tools-trigger,
+    .tools-nav.open .tools-trigger,
+    .tools-trigger:focus-visible {
+      color: var(--text-hero);
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.2);
+      outline: none;
+    }
+    .tools-caret { font-size: 9px; transition: transform 0.2s; }
+    .tools-nav:hover .tools-caret,
+    .tools-nav.open .tools-caret { transform: rotate(180deg); }
+
+    .tools-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 10px;
+      min-width: 280px;
+      background: var(--bg-card);
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      box-shadow: 0 16px 40px rgba(10,22,40,0.22);
+      padding: 8px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-6px);
+      transition: opacity 0.18s, transform 0.18s, visibility 0.18s;
+      z-index: 60;
+    }
+    /* invisible bridge so the hover gap doesn't close the menu */
+    .tools-dropdown::before {
+      content: '';
+      position: absolute;
+      top: -12px; left: 0; right: 0;
+      height: 12px;
+    }
+    .tools-nav:hover .tools-dropdown,
+    .tools-nav:focus-within .tools-dropdown,
+    .tools-nav.open .tools-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .tools-group + .tools-group {
+      border-top: 1px solid #EEF2F6;
+      margin-top: 6px;
+      padding-top: 6px;
+    }
+    .tool-link {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .tool-link:hover { background: var(--bg-trust); }
+    .tool-ic { font-size: 18px; line-height: 1.3; flex-shrink: 0; }
+    .tool-tt {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text-body);
+    }
+    .tool-ds {
+      display: block;
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* ════════════════════ TOOL GATE MODAL ════════════════════ */
+    .tool-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10,22,40,0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      z-index: 1000;
+    }
+    .tool-modal-overlay.open { display: flex; }
+    .tool-modal {
+      background: var(--bg-card);
+      border-radius: 16px;
+      max-width: 420px;
+      width: 100%;
+      padding: 32px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+      position: relative;
+    }
+    .tool-modal h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 22px;
+      color: var(--text-body);
+      margin-bottom: 8px;
+      letter-spacing: -0.3px;
+    }
+    .tool-modal > p {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .tool-modal .lead-form {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .tool-modal .form-micro { color: var(--text-muted); }
+    .tool-modal .form-error { color: #D93025; }
+    .tool-modal-close {
+      position: absolute;
+      top: 14px; right: 16px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      line-height: 1;
+      color: var(--text-muted);
+    }
+    .tool-modal-close:hover { color: var(--text-secondary); }
+
     /* ════════════════════ HERO ════════════════════ */
     .hero {
       background: var(--bg-hero);
@@ -681,6 +821,50 @@
   <header class="top-bar">
     <div class="top-bar-inner">
       <span class="logo"><span class="logo-bolt">⚡</span> ShayanEV</span>
+
+      <nav class="tools-nav" id="toolsNav">
+        <button class="tools-trigger" id="toolsTrigger" type="button" aria-haspopup="true" aria-expanded="false">
+          Tools <span class="tools-caret">▾</span>
+        </button>
+        <div class="tools-dropdown" role="menu" aria-label="EV tools">
+          <div class="tools-group">
+            <a class="tool-link" role="menuitem" href="https://bmslive.vercel.app/"
+               data-url="https://bmslive.vercel.app/" data-name="BMS Simulator">
+              <span class="tool-ic">⚙️</span>
+              <span>
+                <span class="tool-tt">BMS Simulator</span>
+                <span class="tool-ds">Watch a battery management system run live</span>
+              </span>
+            </a>
+            <a class="tool-link" role="menuitem" href="https://chargeiq-kappa.vercel.app/"
+               data-url="https://chargeiq-kappa.vercel.app/" data-name="Charging Calculator">
+              <span class="tool-ic">🔌</span>
+              <span>
+                <span class="tool-tt">Charging Calculator</span>
+                <span class="tool-ds">Estimate charge time and cost</span>
+              </span>
+            </a>
+          </div>
+          <div class="tools-group">
+            <a class="tool-link" role="menuitem" href="https://ev-check-zeta.vercel.app/"
+               data-url="https://ev-check-zeta.vercel.app/" data-name="EV Check">
+              <span class="tool-ic">🔋</span>
+              <span>
+                <span class="tool-tt">EV Check</span>
+                <span class="tool-ds">Check your battery health in seconds</span>
+              </span>
+            </a>
+            <a class="tool-link" role="menuitem" href="https://ev-road-trip.vercel.app/"
+               data-url="https://ev-road-trip.vercel.app/" data-name="Road Trip Planner">
+              <span class="tool-ic">🗺️</span>
+              <span>
+                <span class="tool-tt">Road Trip Planner</span>
+                <span class="tool-ds">Plan charging stops for any route</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </nav>
     </div>
   </header>
 
@@ -830,6 +1014,26 @@
     <a href="/privacy">Privacy Policy</a>
   </footer>
 
+  <!-- ════════════════════ TOOL GATE MODAL ════════════════════ -->
+  <div class="tool-modal-overlay" id="toolModalOverlay">
+    <div class="tool-modal" role="dialog" aria-modal="true" aria-labelledby="toolModalTitle">
+      <button class="tool-modal-close" id="toolModalClose" type="button" aria-label="Close">×</button>
+      <h3 id="toolModalTitle">Open the tool</h3>
+      <p id="toolModalDesc">Enter your name and email and we'll take you straight there.</p>
+      <form class="lead-form" id="toolModalForm" novalidate>
+        <input type="text" name="firstName" placeholder="First name"
+               class="input-field" required autocomplete="given-name" aria-label="First name" />
+        <input type="email" name="email" placeholder="your.email@example.com"
+               class="input-field" required autocomplete="email" aria-label="Email address" />
+        <button type="submit" class="cta-button">
+          <span class="btn-label">Continue →</span>
+        </button>
+      </form>
+      <p class="form-micro">No spam. You'll be redirected right after.</p>
+      <p class="form-error" id="toolModalError"></p>
+    </div>
+  </div>
+
   <!-- ════════════════════ SCRIPTS ════════════════════ -->
   <script>
   (function() {
@@ -970,6 +1174,118 @@
 
     wireForm('leadForm1', 'formWrapper1', 'formError1', 'landing-page-hero');
     wireForm('leadForm2', 'formWrapper2', 'formError2', 'landing-page-bottom');
+
+    // ── Tools dropdown: click/tap toggle (hover handled by CSS) ──
+    const toolsNav     = document.getElementById('toolsNav');
+    const toolsTrigger = document.getElementById('toolsTrigger');
+    if (toolsTrigger && toolsNav) {
+      toolsTrigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = toolsNav.classList.toggle('open');
+        toolsTrigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.addEventListener('click', (e) => {
+        if (!toolsNav.contains(e.target)) {
+          toolsNav.classList.remove('open');
+          toolsTrigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // ── Tool gate modal: capture name + email, then redirect ──
+    const overlay    = document.getElementById('toolModalOverlay');
+    const modalForm  = document.getElementById('toolModalForm');
+    const modalErr   = document.getElementById('toolModalError');
+    const modalTitle = document.getElementById('toolModalTitle');
+    const modalDesc  = document.getElementById('toolModalDesc');
+    const modalClose = document.getElementById('toolModalClose');
+    const mNameInput = modalForm.querySelector('input[name="firstName"]');
+    const mMailInput = modalForm.querySelector('input[name="email"]');
+    const mSubmitBtn = modalForm.querySelector('button[type="submit"]');
+    const mBtnLabel  = mSubmitBtn.querySelector('.btn-label');
+    let pendingUrl  = null;
+    let pendingName = null;
+
+    function openToolModal(url, name) {
+      pendingUrl  = url;
+      pendingName = name;
+      modalTitle.textContent = 'Open ' + name;
+      modalDesc.textContent  = 'Enter your name and email and we’ll take you straight to ' + name + '.';
+      modalErr.classList.remove('visible');
+      mNameInput.classList.remove('error');
+      mMailInput.classList.remove('error');
+      modalForm.reset();
+      mSubmitBtn.disabled = false;
+      mBtnLabel.textContent = 'Continue →';
+      overlay.classList.add('open');
+      setTimeout(() => mNameInput.focus(), 50);
+    }
+    function closeToolModal() {
+      overlay.classList.remove('open');
+      pendingUrl = null;
+    }
+
+    document.querySelectorAll('.tool-link').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (toolsNav) {
+          toolsNav.classList.remove('open');
+          toolsTrigger && toolsTrigger.setAttribute('aria-expanded', 'false');
+        }
+        openToolModal(link.getAttribute('data-url'), link.getAttribute('data-name'));
+        dataLayer.push({ event: 'tool_clicked', tool: link.getAttribute('data-name') });
+      });
+    });
+
+    modalClose.addEventListener('click', closeToolModal);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeToolModal(); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('open')) closeToolModal();
+    });
+
+    modalForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const firstName = mNameInput.value.trim();
+      const email     = mMailInput.value.trim();
+      const dest      = pendingUrl;
+      const toolName  = pendingName;
+
+      mNameInput.classList.remove('error');
+      mMailInput.classList.remove('error');
+      modalErr.classList.remove('visible');
+
+      if (!firstName) {
+        mNameInput.classList.add('error');
+        modalErr.textContent = 'Please enter your first name.';
+        modalErr.classList.add('visible');
+        mNameInput.focus();
+        return;
+      }
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!emailOk) {
+        mMailInput.classList.add('error');
+        modalErr.textContent = 'Please enter a valid email address.';
+        modalErr.classList.add('visible');
+        mMailInput.focus();
+        return;
+      }
+
+      mSubmitBtn.disabled = true;
+      mBtnLabel.innerHTML = '<span class="spinner"></span> Opening...';
+
+      try {
+        await submitEmail(email, firstName, 'tool-gate:' + (toolName || 'tool'));
+        dataLayer.push({ event: 'email_captured', source: 'tool-gate', tool: toolName });
+        if (window.fbq) window.fbq('track', 'Lead', { content_name: 'tool-gate-' + (toolName || 'tool') });
+        try { localStorage.setItem('shayanev_exit_popup_converted', 'true'); } catch (_) {}
+      } catch (err) {
+        // Don't trap the user if the webhook fails — still send them through.
+        console.error('Tool gate submission error:', err);
+        dataLayer.push({ event: 'form_error', error: err.message, source: 'tool-gate' });
+      }
+
+      window.location.href = dest;
+    });
   })();
   </script>
 
